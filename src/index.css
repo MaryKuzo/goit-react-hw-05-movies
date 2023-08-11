@@ -28,3 +28,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+input,
+textarea {
+  outline: none;
+  border: none;
+  border: solid 1px #f2f2f2;
+}

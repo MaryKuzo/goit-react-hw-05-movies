@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getTrandingMovies } from '../fetchAPI/FetchApi';
+import { getTrandingMovies } from '../services/FetchApi';
 import MoviesList from 'components/MoviesList/MoviesList';
 
 const Home = () => {

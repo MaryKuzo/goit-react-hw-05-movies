@@ -1,7 +1,13 @@
 import GoBackButton from "components/GoBackButton/GoBackButton";
-import { getMoviesById } from "fetchAPI/FetchApi";
-import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom"
+import MoviesInfo from "components/MoviesInfo/MoviesInfo";
+import { getMoviesById } from "services/FetchApi";
+import { useEffect, useState, Suspense, lazy } from "react";
+import { Outlet, useLocation, useParams } from "react-router-dom"
+import Loading from "components/Loading/Loading";
+
+
+
+const AdditionalParts = lazy(()=> import('../components/AdditionalParts/AdditionalParts'))
 
 const MovieDetails = () => {
   const [movie, setMovies] = useState(null)
@@ -10,12 +16,13 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkLocationRef = location.state?.from ?? '/'
 
-  useEffect(() => {
-    getMoviesById(movieId)
-      .then(data =>
-        setMovies(data))
-      .catch(error => console.log(error))
-  }, [movieId]);
+useEffect(() => {
+  getMoviesById(movieId)
+    .then(data => {
+      setMovies(data);
+    })
+    .catch(error => console.log(error));
+}, [movieId]);
 
 
 
@@ -25,16 +32,13 @@ const MovieDetails = () => {
 
   return (
     <>
-      <GoBackButton backLinkLocationRef={ backLinkLocationRef } />
-     {movie && (
-        <div>
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
-          {movie.poster_path && (
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-          )}
-        </div>
-      )}</>
+      <GoBackButton backLinkLocationRef={backLinkLocationRef} />
+      {movie && <MoviesInfo movie={movie} />}
+      <AdditionalParts location={backLinkLocationRef}/>
+      <Suspense fallback={<Loading/>}>
+        <Outlet/>
+      </Suspense>
+    </>
   );
 }
 export default MovieDetails

@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom"
-const GoBackButton = ({backLinkLocationRef}) => {
+import React from 'react';
+import { GoBackButtonContainer, StyledLink, Icon } from './GoBackButton.styled';
+
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+
+const GoBackButton = ({ backLinkLocationRef }) => {
   return (
-    <div>
-      <Link to={backLinkLocationRef}>
+    <GoBackButtonContainer>
+      <StyledLink to={backLinkLocationRef}>
+        <Icon icon={faArrowLeft} />
         Go back
-      </Link>
-    </div>
-  )
-}
-export default GoBackButton
+      </StyledLink>
+    </GoBackButtonContainer>
+  );
+};
+
+
+export default GoBackButton;

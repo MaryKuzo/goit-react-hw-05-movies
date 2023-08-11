@@ -21,3 +21,15 @@ export async function getMoviesQuery(query) {
   const response = await axios.get(url);
   return response
 }
+
+export async function getMovieCast(id) {
+  const url = `${BASE_URL}movie/${id}/credits?api_key=${KEY}&language=en-US`;
+  const response = await axios.get(url);
+  return response.data.cast;
+}
+
+export async function getMovieReview(id) {
+  const url = `${BASE_URL}movie/${id}/reviews?api_key=${KEY}&language=en-US`;
+  const response = await axios.get(url);
+  return response.data.results;
+}

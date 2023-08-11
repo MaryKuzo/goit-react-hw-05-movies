@@ -1,5 +1,10 @@
 
-import {  NavLinkStyled, Header } from "./AppHeader.styled";
+import {
+  NavLinkStyled,
+  Header,
+  NavHeader
+} from "./AppHeader.styled";
+import { BiSolidCameraMovie } from "react-icons/bi";
 
 const navItems = [
   { href: '/', text: 'Home' },
@@ -9,16 +14,16 @@ const navItems = [
 const AppHeader = () => {
   return (
     <Header>
-      <nav>
+      <NavHeader>
         {navItems.map(({ href, text }) => (
           <NavLinkStyled
             key={href}
             to={href}
-          >
+          ><BiSolidCameraMovie />
             {text}
           </NavLinkStyled>
         ))}
-      </nav>
+      </NavHeader>
    </Header>
   )
 }

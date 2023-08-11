@@ -1,27 +1,25 @@
-import { Link, useLocation } from "react-router-dom";
+import React from 'react';
+import {  useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { MoviesListContainer, Title, MovieItem, MovieLink } from './MoviesList.styled';
 
 const MoviesList = ({ movies, titlePage = '' }) => {
   const location = useLocation();
 
   return (
-    <>
-      {titlePage && <h1>{ titlePage }</h1> }
+    <MoviesListContainer>
+      {titlePage && <Title>{titlePage}</Title>}
       <ul>
         {movies.map(({ id, title, name }) => (
-          <li key={id}>
-            <Link
-              to={`/movies/${id}`}
-              state={{ from: location }}
-            >
+          <MovieItem key={id}>
+            <MovieLink to={`/movies/${id}`} state={{ from: location }}>
               {title || name}
-            </Link>
-          </li>
-))}
-
+            </MovieLink>
+          </MovieItem>
+        ))}
       </ul>
-    </>
-  )
+    </MoviesListContainer>
+  );
 };
 
 MoviesList.propTypes = {
@@ -29,10 +27,10 @@ MoviesList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string,
-      name: PropTypes.string
+      name: PropTypes.string,
     }).isRequired
   ),
-    titlePage: PropTypes.string,
-}
+  titlePage: PropTypes.string,
+};
 
 export default MoviesList;
