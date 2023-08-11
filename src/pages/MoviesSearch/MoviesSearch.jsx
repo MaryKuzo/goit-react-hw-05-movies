@@ -2,12 +2,15 @@ import React from 'react';
 import {
   MoviesSearchContainer,
   SearchInput,
-  MoviesListContainer
+  MoviesListContainer,
+  SearchWrapper,
+  SearchIcon
 } from './MoviesSearch.styled';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMoviesQuery } from 'services/FetchApi';
 import MoviesList from 'components/MoviesList/MoviesList';
+
 
 const MoviesSearch = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,12 +42,15 @@ const MoviesSearch = () => {
 
   return (
     <MoviesSearchContainer>
-      <SearchInput
+      <SearchWrapper>
+        <SearchInput
         type="text"
         value={query}
         onChange={updateQueryString}
         placeholder="Search movies..."
-      />
+        />
+        <SearchIcon/>
+      </SearchWrapper>
       {movies && (
         <MoviesListContainer>
           <MoviesList movies={movies} />

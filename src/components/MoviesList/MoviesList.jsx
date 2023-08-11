@@ -1,7 +1,13 @@
 import React from 'react';
 import {  useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { MoviesListContainer, Title, MovieItem, MovieLink, StyledFilmIcon } from './MoviesList.styled';
+import {
+  MoviesListContainer,
+  Title,
+  MovieItem,
+  MovieLink,
+  StyledFilmIcon
+} from './MoviesList.styled';
 
 
 const MoviesList = ({ movies, titlePage = '' }) => {
