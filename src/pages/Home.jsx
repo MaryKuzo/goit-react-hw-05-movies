@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTrandingMovies } from '../services/FetchApi';
 import MoviesList from 'components/MoviesList/MoviesList';
 
+
 const Home = () => {
   const [movies, setMovies] = useState(null)
   useEffect(() => {
@@ -18,7 +19,8 @@ const Home = () => {
 
   return (
     <>
-      <MoviesList movies={movies} titlePage={'Trending Movies'} />
+      <MoviesList movies={movies} titlePage={'Trending Movies'}/>
+
     </>
   );
 };

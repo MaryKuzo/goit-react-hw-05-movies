@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { MdLocalMovies } from 'react-icons/md';
+
+export const StyledFilmIcon = styled(MdLocalMovies)`
+  fill: #D43369;
+  margin-right: 5px;
+  vertical-align: middle;
+`;
 
 export const MoviesListContainer = styled.div`
   margin-top: 20px;
@@ -9,6 +16,8 @@ export const Title = styled.h2`
   font-size: 28px;
   margin-bottom: 20px;
   padding-left: 40px;
+  display: flex;
+  align-items: center;
 `;
 
 export const MovieItem = styled.li`

@@ -1,14 +1,15 @@
 import React from 'react';
 import {  useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { MoviesListContainer, Title, MovieItem, MovieLink } from './MoviesList.styled';
+import { MoviesListContainer, Title, MovieItem, MovieLink, StyledFilmIcon } from './MoviesList.styled';
+
 
 const MoviesList = ({ movies, titlePage = '' }) => {
   const location = useLocation();
 
   return (
     <MoviesListContainer>
-      {titlePage && <Title>{titlePage}</Title>}
+      {titlePage && <Title><StyledFilmIcon />{titlePage}</Title>}
       <ul>
         {movies.map(({ id, title, name }) => (
           <MovieItem key={id}>
