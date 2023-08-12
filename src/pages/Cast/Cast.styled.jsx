@@ -34,7 +34,7 @@ export const Character = styled.p`
   color: #555;
 `;
 export const CharacterSpan = styled.span`
-color:#D43369
+  color:#D43369;
 `
 export const DefaultImage = styled.img`
   width: 100%;
@@ -43,3 +43,9 @@ export const DefaultImage = styled.img`
   opacity: 0.7;
 
 `;
+
+export const NoCharacterSpan = styled.span`
+  color: #D43369;
+  font-size: 24px;
+  padding-left: 20px;
+`

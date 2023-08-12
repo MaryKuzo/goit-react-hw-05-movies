@@ -10,7 +10,8 @@ import {
   ActorName,
   Character,
   CharacterSpan,
-  DefaultImage
+  DefaultImage,
+  NoCharacterSpan
 } from './Cast.styled';
 import DefaultActorImage from './default.png';
 
@@ -23,7 +24,7 @@ const Cast = () => {
     getMovieCast(movieId)
       .then(data => {
         setCast(data);
-        
+
       })
       .catch(error => console.error(error));
   }, [movieId]);
@@ -53,7 +54,7 @@ const Cast = () => {
           ))}
         </ActorList>
       ) : (
-        <div>No actors here</div>
+        <NoCharacterSpan>No actors here</NoCharacterSpan>
       )}
     </CastContainer>
   );
