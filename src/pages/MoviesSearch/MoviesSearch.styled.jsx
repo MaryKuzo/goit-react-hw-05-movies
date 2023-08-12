@@ -25,7 +25,7 @@ export const SearchIcon = styled(BsFillSearchHeartFill)`
   transform: translateY(-50%);
   left: 500px;
   font-size: 20px;
-  color: #D43369;
+  color: ;
 `;
 export const SearchWrapper = styled.div`
   position: relative;
