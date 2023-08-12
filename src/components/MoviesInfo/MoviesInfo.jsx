@@ -6,9 +6,11 @@ import {
   UserScore,
   Overview,
   Genres,
-  GenresSpan
+  GenresSpan,
+  DefaultImageCast
 } from './MoviesInfo.styled'
 import PropTypes from 'prop-types';
+import DefaultCastImage from './default_img.png';
 
 const MoviesInfo = ({ movie }) => {
   const {
@@ -28,7 +30,15 @@ const MoviesInfo = ({ movie }) => {
   return (
     <>
       <MovieDetailsContainer>
-        <MovieImage src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title || name} />
+        {poster_path ? (
+          <MovieImage
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt={title || name} />)
+          :
+          <DefaultImageCast
+            src={DefaultCastImage}
+            alt="No image available" />}
+
         <MovieInform>
           <MovieTitle>
             {title || name} ({(first_air_date || release_date).slice(0, 4)})

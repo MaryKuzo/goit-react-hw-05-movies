@@ -44,3 +44,10 @@ export const MovieInform = styled.div`
 export const GenresSpan = styled.span`
 color:#934665
 `
+export const DefaultImageCast = styled.img`
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0.7;
+
+`;
