@@ -12,7 +12,7 @@ export const SearchInput = styled.input`
   border: 1px solid #ccc;
   transition: border-color 0.3s;
   padding-left: 30px;
-  border-radius: 10px;
+  border-radius: 20px;
 
   &:focus {
     border-color: #D43369;
@@ -25,7 +25,7 @@ export const SearchIcon = styled(BsFillSearchHeartFill)`
   transform: translateY(-50%);
   left: 500px;
   font-size: 20px;
-  color: ;
+  color: #D43369;
 `;
 export const SearchWrapper = styled.div`
   position: relative;

@@ -4,7 +4,7 @@ import {
   SearchInput,
   MoviesListContainer,
   SearchWrapper,
-
+  SearchIcon
 } from './MoviesSearch.styled';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -49,7 +49,7 @@ const MoviesSearch = () => {
         onChange={updateQueryString}
         placeholder="Search movies..."
         />
-
+        <SearchIcon/>
       </SearchWrapper>
       {movies && (
         <MoviesListContainer>
