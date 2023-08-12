@@ -10,6 +10,7 @@ export const ActorList = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const ActorCard = styled.li`
