@@ -6,6 +6,7 @@ import {
   AdditionalSpan
 } from './AdditionalParts.styled';
 
+
 const AdditionalItems = [
   { href: 'cast', text: 'Cast' },
   { href: 'reviews', text: 'Reviews'}
@@ -13,16 +14,19 @@ const AdditionalItems = [
 
 const AdditionalParts = () => {
   return (
-        <AdditionalPartsContainer>
-      {AdditionalItems.map(({ href, text }) => (
-        <AdditionalPart key={href}>
-          <AdditionalLink to={href}>
-            <AdditionalSpan>{text} <Icon /></AdditionalSpan>
+    <>
 
-          </AdditionalLink>
-        </AdditionalPart>
-      ))}
-    </AdditionalPartsContainer>
+        <AdditionalPartsContainer>
+          {AdditionalItems.map(({ href, text }) => (
+            <AdditionalPart key={href}>
+              <AdditionalLink to={href}>
+                <AdditionalSpan>{text} <Icon /></AdditionalSpan>
+
+              </AdditionalLink>
+            </AdditionalPart>
+          ))}
+        </AdditionalPartsContainer>
+   </>
 
   );
 };

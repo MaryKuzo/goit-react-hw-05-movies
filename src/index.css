@@ -16,6 +16,7 @@ body {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 li {
   list-style: none;
@@ -33,4 +34,23 @@ textarea {
   outline: none;
   border: none;
   border: solid 1px #f2f2f2;
+}
+
+:root {
+  --scrollbar-thumb-color: #d43369;
+  --scrollbar-track-color: #f2f2f2;
+}
+
+/* Стилізація скролбара */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
 }

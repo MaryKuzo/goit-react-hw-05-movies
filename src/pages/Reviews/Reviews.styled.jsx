@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 
 export const ReviewsContainer = styled.div`
   margin-top: 20px;
+  padding-left: 20px;
+
 `;
 
 export const ReviewItem = styled.li`
@@ -10,6 +12,7 @@ export const ReviewItem = styled.li`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  max-width: 96%;
 `;
 
 export const Author = styled.h3`

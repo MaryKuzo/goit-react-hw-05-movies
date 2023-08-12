@@ -10,12 +10,12 @@ export const StyledFilmIcon = styled(MdLocalMovies)`
 
 export const MoviesListContainer = styled.div`
   margin-top: 20px;
+  padding-left: 40px;
 `;
 
 export const Title = styled.h2`
   font-size: 28px;
   margin-bottom: 20px;
-  padding-left: 40px;
   display: flex;
   align-items: center;
 `;
