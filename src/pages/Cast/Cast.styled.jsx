@@ -1,10 +1,5 @@
 import styled from '@emotion/styled';
-import { Scrollbars } from 'react-custom-scrollbars';
-export const StyledScrollbars = styled(Scrollbars)`
-  width: 300px;
-  height: 400px;
-  background-color: blue;
-`;
+
 export const CastContainer = styled.div`
   margin-top: 20px;
 `;
